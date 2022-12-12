@@ -7,7 +7,7 @@ on:
       - main
       
   schedule:
-  - cron: "1 * * * *"
+  - cron: "5 * * * *"
 
 jobs:
   auto_commit:
@@ -32,4 +32,11 @@ jobs:
           git config --local user.name "belajarqywok"
           git add -A
           git commit -m "Penanaman Pohon"
-          git push -u origin main
+          git branch -M main
+
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          force: true
+          directory: "."
+          github_token: ${{ secrets.TOKEN }}
