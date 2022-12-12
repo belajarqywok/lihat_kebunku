@@ -7,7 +7,7 @@ on:
       - main
       
   schedule:
-  - cron: "5 * * * *"
+  - cron: "* 1/4 * * *"
 
 jobs:
   auto_commit:
