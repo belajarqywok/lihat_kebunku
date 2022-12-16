@@ -32,7 +32,6 @@ jobs:
           git config --local user.name "belajarqywok"
           git add -A
           git commit -m "Penanaman Pohon"
-          git branch -M main
 
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
