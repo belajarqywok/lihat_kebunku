@@ -1,0 +1,39 @@
+name: Perkebunan Jagung
+
+on:
+
+  push:
+    branches:
+      - main
+      
+  schedule:
+  - cron: "* 1/4 * * *"
+
+jobs:
+  auto_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set global directory
+        run: git config --global --add safe.directory /github/workspace
+      - uses: actions/checkout@v3     
+        with:
+         persist-credentials: false
+         fetch-depth: 1
+
+      - name: Modify last update
+        run: |
+          cat > README.md
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          echo $d > README.md
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "belajarqywok@gmail.com"
+          git config --local user.name "belajarqywok"
+          git add -A
+          git commit -m "Penanaman Jagung Di kebun Kita"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
