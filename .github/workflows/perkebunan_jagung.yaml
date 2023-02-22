@@ -31,7 +31,7 @@ jobs:
           git config --local user.email "belajarqywok@gmail.com"
           git config --local user.name "belajarqywok"
           git add -A
-          git commit -m "Penanaman Jagung Di kebun Kita"
+          git commit -m "Menanaman Jagung Di kebun Kita"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
