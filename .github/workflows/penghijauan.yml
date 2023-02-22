@@ -33,9 +33,8 @@ jobs:
           git add -A
           git commit -m "Penanaman Pohon"
 
-      - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
+      - name: Push changes
+        uses: ad-m/github-push-action@main
         with:
-          force: true
-          directory: "."
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
