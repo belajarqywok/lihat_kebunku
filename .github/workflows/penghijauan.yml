@@ -21,7 +21,9 @@ jobs:
          fetch-depth: 1
 
       - name: Modify last update
-        run: ./auto.sh
+        run: |
+          chmod +x auto.sh
+          ./auto.sh
           
       - name: Commit changes
         run: |
