@@ -21,10 +21,7 @@ jobs:
          fetch-depth: 1
 
       - name: Modify last update
-        run: |
-          cat > README.md
-          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
-          echo $d > README.md
+        run: ./auto.sh
           
       - name: Commit changes
         run: |
