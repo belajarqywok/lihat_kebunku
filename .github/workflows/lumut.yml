@@ -22,9 +22,8 @@ jobs:
 
       - name: Modify last update
         run: |
-          cat > README.md
-          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
-          echo $d > README.md
+          chmod +x auto.sh
+          ./auto.sh
           
       - name: Commit changes
         run: |
