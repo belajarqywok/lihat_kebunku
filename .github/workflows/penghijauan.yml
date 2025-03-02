@@ -1,4 +1,4 @@
-name: Reboisasi
+name: Penghijauan
 
 on:
 
@@ -27,8 +27,8 @@ jobs:
           
       - name: Commit changes
         run: |
-          git config --local user.email "belajarqywok@gmail.com"
-          git config --local user.name "belajarqywok"
+          git config --local user.email "bagusbudisatoto2001@gmail.com"
+          git config --local user.name "bagussatoto"
           git add -A
           git commit -m "Penanaman Pohon"
 
